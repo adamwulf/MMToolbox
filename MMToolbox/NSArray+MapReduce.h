@@ -12,11 +12,17 @@
 @interface NSArray <T> (MapReduce)
 
 - (NSArray *)map : (id (^)(T obj, NSUInteger index))mapFunc;
+
 - (NSArray *)mapWithSelector:(SEL)mapSelector;
+
 - (id)reduce:(id (^)(T obj, NSUInteger index, id accum))reduceFunc;
-- (BOOL)containsObjectIdenticalTo:(T)anObject;
-- (NSArray<T> *)filter:(BOOL (^)(T obj, NSUInteger index))filterFunc;
+
 - (BOOL)reduceToBOOL:(BOOL (^)(T obj, NSUInteger index, BOOL accum))reduceFunc;
+
 - (T)choose:(BOOL (^)(T obj, NSUInteger index))reducefunc;
+
+- (NSArray<T> *)filter:(BOOL (^)(T obj, NSUInteger index))filterFunc;
+
+- (BOOL)containsObjectIdenticalTo:(T)anObject;
 
 @end

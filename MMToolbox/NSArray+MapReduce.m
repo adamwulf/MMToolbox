@@ -37,19 +37,6 @@
     return result;
 }
 
-- (id)choose:(BOOL (^)(id obj, NSUInteger index))chooseFunc
-{
-    id result = NULL;
-    NSUInteger index;
-    for (index = 0; index < [self count]; index++) {
-        id obj = [self objectAtIndex:index];
-        if (chooseFunc(obj, index)) {
-            return obj;
-        }
-    }
-    return result;
-}
-
 - (id)reduce:(id (^)(id obj, NSUInteger index, id accum))reduceFunc
 {
     id result = NULL;
@@ -70,9 +57,17 @@
     return result;
 }
 
-- (BOOL)containsObjectIdenticalTo:(id)anObject
+- (id)choose:(BOOL (^)(id obj, NSUInteger index))chooseFunc
 {
-    return [self indexOfObjectIdenticalTo:anObject] != NSNotFound;
+    id result = NULL;
+    NSUInteger index;
+    for (index = 0; index < [self count]; index++) {
+        id obj = [self objectAtIndex:index];
+        if (chooseFunc(obj, index)) {
+            return obj;
+        }
+    }
+    return result;
 }
 
 - (NSArray *)filter:(BOOL (^)(id obj, NSUInteger index))filterFunc
@@ -85,6 +80,11 @@
         }
     }
     return ret;
+}
+
+- (BOOL)containsObjectIdenticalTo:(id)anObject
+{
+    return [self indexOfObjectIdenticalTo:anObject] != NSNotFound;
 }
 
 @end
