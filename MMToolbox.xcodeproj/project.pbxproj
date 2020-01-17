@@ -8,12 +8,32 @@
 
 /* Begin PBXBuildFile section */
 		C587724523D1802B00F89D76 /* MMToolbox.h in Headers */ = {isa = PBXBuildFile; fileRef = C587724323D1802B00F89D76 /* MMToolbox.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C587724D23D1813100F89D76 /* NSFileManager+Helper.h in Headers */ = {isa = PBXBuildFile; fileRef = C587724B23D1813100F89D76 /* NSFileManager+Helper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C587724E23D1813100F89D76 /* NSFileManager+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = C587724C23D1813100F89D76 /* NSFileManager+Helper.m */; };
+		C587725923D181F700F89D76 /* NSThread+BlockAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = C587725723D181F700F89D76 /* NSThread+BlockAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C587725A23D181F700F89D76 /* NSThread+BlockAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = C587725823D181F700F89D76 /* NSThread+BlockAdditions.m */; };
+		C587725D23D1820000F89D76 /* NSArray+MapReduce.m in Sources */ = {isa = PBXBuildFile; fileRef = C587725B23D1820000F89D76 /* NSArray+MapReduce.m */; };
+		C587725E23D1820000F89D76 /* NSArray+MapReduce.h in Headers */ = {isa = PBXBuildFile; fileRef = C587725C23D1820000F89D76 /* NSArray+MapReduce.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C587726123D1820C00F89D76 /* UIView+AnchorPoint.h in Headers */ = {isa = PBXBuildFile; fileRef = C587725F23D1820C00F89D76 /* UIView+AnchorPoint.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C587726223D1820C00F89D76 /* UIView+AnchorPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = C587726023D1820C00F89D76 /* UIView+AnchorPoint.m */; };
+		C587726523D1821600F89D76 /* UIColor+MMToolbox.m in Sources */ = {isa = PBXBuildFile; fileRef = C587726323D1821600F89D76 /* UIColor+MMToolbox.m */; };
+		C587726623D1821600F89D76 /* UIColor+MMToolbox.h in Headers */ = {isa = PBXBuildFile; fileRef = C587726423D1821600F89D76 /* UIColor+MMToolbox.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C587724023D1802B00F89D76 /* MMToolbox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MMToolbox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C587724323D1802B00F89D76 /* MMToolbox.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MMToolbox.h; sourceTree = "<group>"; };
 		C587724423D1802B00F89D76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C587724B23D1813100F89D76 /* NSFileManager+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+Helper.h"; sourceTree = "<group>"; };
+		C587724C23D1813100F89D76 /* NSFileManager+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+Helper.m"; sourceTree = "<group>"; };
+		C587725723D181F700F89D76 /* NSThread+BlockAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSThread+BlockAdditions.h"; sourceTree = "<group>"; };
+		C587725823D181F700F89D76 /* NSThread+BlockAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSThread+BlockAdditions.m"; sourceTree = "<group>"; };
+		C587725B23D1820000F89D76 /* NSArray+MapReduce.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+MapReduce.m"; sourceTree = "<group>"; };
+		C587725C23D1820000F89D76 /* NSArray+MapReduce.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+MapReduce.h"; sourceTree = "<group>"; };
+		C587725F23D1820C00F89D76 /* UIView+AnchorPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AnchorPoint.h"; sourceTree = "<group>"; };
+		C587726023D1820C00F89D76 /* UIView+AnchorPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+AnchorPoint.m"; sourceTree = "<group>"; };
+		C587726323D1821600F89D76 /* UIColor+MMToolbox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+MMToolbox.m"; sourceTree = "<group>"; };
+		C587726423D1821600F89D76 /* UIColor+MMToolbox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+MMToolbox.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,9 +67,27 @@
 			isa = PBXGroup;
 			children = (
 				C587724323D1802B00F89D76 /* MMToolbox.h */,
+				C587725223D181D500F89D76 /* Categories */,
 				C587724423D1802B00F89D76 /* Info.plist */,
 			);
 			path = MMToolbox;
+			sourceTree = "<group>";
+		};
+		C587725223D181D500F89D76 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				C587725C23D1820000F89D76 /* NSArray+MapReduce.h */,
+				C587725B23D1820000F89D76 /* NSArray+MapReduce.m */,
+				C587724B23D1813100F89D76 /* NSFileManager+Helper.h */,
+				C587724C23D1813100F89D76 /* NSFileManager+Helper.m */,
+				C587725723D181F700F89D76 /* NSThread+BlockAdditions.h */,
+				C587725823D181F700F89D76 /* NSThread+BlockAdditions.m */,
+				C587726423D1821600F89D76 /* UIColor+MMToolbox.h */,
+				C587726323D1821600F89D76 /* UIColor+MMToolbox.m */,
+				C587725F23D1820C00F89D76 /* UIView+AnchorPoint.h */,
+				C587726023D1820C00F89D76 /* UIView+AnchorPoint.m */,
+			);
+			name = Categories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -59,7 +97,12 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C587725923D181F700F89D76 /* NSThread+BlockAdditions.h in Headers */,
 				C587724523D1802B00F89D76 /* MMToolbox.h in Headers */,
+				C587726623D1821600F89D76 /* UIColor+MMToolbox.h in Headers */,
+				C587726123D1820C00F89D76 /* UIView+AnchorPoint.h in Headers */,
+				C587724D23D1813100F89D76 /* NSFileManager+Helper.h in Headers */,
+				C587725E23D1820000F89D76 /* NSArray+MapReduce.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,6 +174,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C587725A23D181F700F89D76 /* NSThread+BlockAdditions.m in Sources */,
+				C587724E23D1813100F89D76 /* NSFileManager+Helper.m in Sources */,
+				C587726223D1820C00F89D76 /* UIView+AnchorPoint.m in Sources */,
+				C587725D23D1820000F89D76 /* NSArray+MapReduce.m in Sources */,
+				C587726523D1821600F89D76 /* UIColor+MMToolbox.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
