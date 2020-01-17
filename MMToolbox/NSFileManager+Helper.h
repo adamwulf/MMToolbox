@@ -21,7 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (void)ensureDirectoryExistsAtPath:(NSString *)path;
 
-- (void)enumerateDirectory:(NSString *)directory withBlock:(void (^)(NSURL *item, NSUInteger totalItemCount))perItemBlock andErrorHandler:(BOOL (^)(NSURL *url, NSError *error))handler;
+- (void)enumerateDirectory:(NSString *)directory withBlock:(void (^)(NSURL *item, NSUInteger totalItemCount))perItemBlock andErrorHandler:(BOOL (^__nullable)(NSURL *url, NSError *error))handler;
 
 - (BOOL)isDirectory:(NSString *)path;
 
