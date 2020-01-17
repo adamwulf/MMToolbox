@@ -20,6 +20,8 @@
 		C587726623D1821600F89D76 /* UIColor+MMToolbox.h in Headers */ = {isa = PBXBuildFile; fileRef = C587726423D1821600F89D76 /* UIColor+MMToolbox.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C587729323D185D300F89D76 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = C587729123D185D300F89D76 /* Constants.m */; };
 		C587729423D185D300F89D76 /* Constants.h in Headers */ = {isa = PBXBuildFile; fileRef = C587729223D185D300F89D76 /* Constants.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C587729723D1873B00F89D76 /* MMVector.m in Sources */ = {isa = PBXBuildFile; fileRef = C587729523D1873B00F89D76 /* MMVector.m */; };
+		C587729823D1873B00F89D76 /* MMVector.h in Headers */ = {isa = PBXBuildFile; fileRef = C587729623D1873B00F89D76 /* MMVector.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		C587726423D1821600F89D76 /* UIColor+MMToolbox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+MMToolbox.h"; sourceTree = "<group>"; };
 		C587729123D185D300F89D76 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 		C587729223D185D300F89D76 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		C587729523D1873B00F89D76 /* MMVector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMVector.m; sourceTree = "<group>"; };
+		C587729623D1873B00F89D76 /* MMVector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMVector.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +78,7 @@
 				C587729223D185D300F89D76 /* Constants.h */,
 				C587729123D185D300F89D76 /* Constants.m */,
 				C587725223D181D500F89D76 /* Categories */,
+				C587729923D1873F00F89D76 /* Classes */,
 				C587724423D1802B00F89D76 /* Info.plist */,
 			);
 			path = MMToolbox;
@@ -96,6 +101,15 @@
 			name = Categories;
 			sourceTree = "<group>";
 		};
+		C587729923D1873F00F89D76 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				C587729623D1873B00F89D76 /* MMVector.h */,
+				C587729523D1873B00F89D76 /* MMVector.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -108,6 +122,7 @@
 				C587724523D1802B00F89D76 /* MMToolbox.h in Headers */,
 				C587726623D1821600F89D76 /* UIColor+MMToolbox.h in Headers */,
 				C587726123D1820C00F89D76 /* UIView+AnchorPoint.h in Headers */,
+				C587729823D1873B00F89D76 /* MMVector.h in Headers */,
 				C587724D23D1813100F89D76 /* NSFileManager+Helper.h in Headers */,
 				C587725E23D1820000F89D76 /* NSArray+MapReduce.h in Headers */,
 			);
@@ -182,6 +197,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C587725A23D181F700F89D76 /* NSThread+BlockAdditions.m in Sources */,
+				C587729723D1873B00F89D76 /* MMVector.m in Sources */,
 				C587724E23D1813100F89D76 /* NSFileManager+Helper.m in Sources */,
 				C587726223D1820C00F89D76 /* UIView+AnchorPoint.m in Sources */,
 				C587725D23D1820000F89D76 /* NSArray+MapReduce.m in Sources */,

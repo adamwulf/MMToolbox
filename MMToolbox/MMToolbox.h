@@ -22,3 +22,5 @@ FOUNDATION_EXPORT const unsigned char MMToolboxVersionString[];
 #import <MMToolbox/NSThread+BlockAdditions.h>
 #import <MMToolbox/UIColor+MMToolbox.h>
 #import <MMToolbox/UIView+AnchorPoint.h>
+
+#import <MMToolbox/MMVector.h>
