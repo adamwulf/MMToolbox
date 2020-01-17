@@ -17,6 +17,6 @@
 - (BOOL)containsObjectIdenticalTo:(T)anObject;
 - (NSArray<T> *)filter:(BOOL (^)(T obj, NSUInteger index))filterFunc;
 - (BOOL)reduceToBOOL:(BOOL (^)(T obj, NSUInteger index, BOOL accum))reduceFunc;
-- (id)firstResult:(id (^)(id obj, NSUInteger index, id accum))reducefunc;
+- (T)choose:(BOOL (^)(T obj, NSUInteger index))reducefunc;
 
 @end

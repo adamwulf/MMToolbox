@@ -11,12 +11,12 @@
 
 @implementation NSArray (MapReduce)
 
-- (NSArray *)map:(id (^)(id obj, NSUInteger index))mapfunc
+- (NSArray *)map:(id (^)(id obj, NSUInteger index))mapFunc
 {
     NSMutableArray *result = [[NSMutableArray alloc] init];
     NSUInteger index;
     for (index = 0; index < [self count]; index++) {
-        id foo = mapfunc([self objectAtIndex:index], index);
+        id foo = mapFunc([self objectAtIndex:index], index);
         if (foo) {
             [result addObject:foo];
         }
@@ -37,24 +37,25 @@
     return result;
 }
 
-- (id)firstResult:(id (^)(id obj, NSUInteger index, id accum))reducefunc
+- (id)choose:(BOOL (^)(id obj, NSUInteger index))chooseFunc
 {
     id result = NULL;
     NSUInteger index;
     for (index = 0; index < [self count]; index++) {
-        result = reducefunc([self objectAtIndex:index], index, result);
-        if (result)
-            break;
+        id obj = [self objectAtIndex:index];
+        if (chooseFunc(obj, index)) {
+            return obj;
+        }
     }
     return result;
 }
 
-- (id)reduce:(id (^)(id obj, NSUInteger index, id accum))reducefunc
+- (id)reduce:(id (^)(id obj, NSUInteger index, id accum))reduceFunc
 {
     id result = NULL;
     NSUInteger index;
     for (index = 0; index < [self count]; index++) {
-        result = reducefunc([self objectAtIndex:index], index, result);
+        result = reduceFunc([self objectAtIndex:index], index, result);
     }
     return result;
 }
@@ -71,12 +72,7 @@
 
 - (BOOL)containsObjectIdenticalTo:(id)anObject
 {
-    for (id obj in self) {
-        if (obj == anObject) {
-            return YES;
-        }
-    }
-    return NO;
+    return [self indexOfObjectIdenticalTo:anObject] != NSNotFound;
 }
 
 - (NSArray *)filter:(BOOL (^)(id obj, NSUInteger index))filterFunc
