@@ -22,6 +22,26 @@
 		C587729423D185D300F89D76 /* Constants.h in Headers */ = {isa = PBXBuildFile; fileRef = C587729223D185D300F89D76 /* Constants.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C587729723D1873B00F89D76 /* MMVector.m in Sources */ = {isa = PBXBuildFile; fileRef = C587729523D1873B00F89D76 /* MMVector.m */; };
 		C587729823D1873B00F89D76 /* MMVector.h in Headers */ = {isa = PBXBuildFile; fileRef = C587729623D1873B00F89D76 /* MMVector.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C58772B823D19E2700F89D76 /* NSMutableArray+QueueAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = C58772AE23D19E2600F89D76 /* NSMutableArray+QueueAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C58772B923D19E2700F89D76 /* NSMutableSet+Extras.m in Sources */ = {isa = PBXBuildFile; fileRef = C58772AF23D19E2700F89D76 /* NSMutableSet+Extras.m */; };
+		C58772BA23D19E2700F89D76 /* NSMutableSet+Extras.h in Headers */ = {isa = PBXBuildFile; fileRef = C58772B023D19E2700F89D76 /* NSMutableSet+Extras.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C58772BB23D19E2700F89D76 /* UIFont+UIBezierPath.h in Headers */ = {isa = PBXBuildFile; fileRef = C58772B123D19E2700F89D76 /* UIFont+UIBezierPath.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C58772BC23D19E2700F89D76 /* NSMutableArray+StackAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = C58772B223D19E2700F89D76 /* NSMutableArray+StackAdditions.m */; };
+		C58772BD23D19E2700F89D76 /* NSIndexSet+Map.h in Headers */ = {isa = PBXBuildFile; fileRef = C58772B323D19E2700F89D76 /* NSIndexSet+Map.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C58772BE23D19E2700F89D76 /* UIFont+UIBezierPath.m in Sources */ = {isa = PBXBuildFile; fileRef = C58772B423D19E2700F89D76 /* UIFont+UIBezierPath.m */; };
+		C58772BF23D19E2700F89D76 /* NSMutableArray+QueueAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = C58772B523D19E2700F89D76 /* NSMutableArray+QueueAdditions.m */; };
+		C58772C023D19E2700F89D76 /* NSIndexSet+Map.m in Sources */ = {isa = PBXBuildFile; fileRef = C58772B623D19E2700F89D76 /* NSIndexSet+Map.m */; };
+		C58772C123D19E2700F89D76 /* NSMutableArray+StackAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = C58772B723D19E2700F89D76 /* NSMutableArray+StackAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C58772C423D19E4A00F89D76 /* NSArray+Extras.h in Headers */ = {isa = PBXBuildFile; fileRef = C58772C223D19E4A00F89D76 /* NSArray+Extras.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C58772C523D19E4A00F89D76 /* NSArray+Extras.m in Sources */ = {isa = PBXBuildFile; fileRef = C58772C323D19E4A00F89D76 /* NSArray+Extras.m */; };
+		C58772C823D19E5F00F89D76 /* NSURL+UTI.h in Headers */ = {isa = PBXBuildFile; fileRef = C58772C623D19E5F00F89D76 /* NSURL+UTI.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C58772C923D19E5F00F89D76 /* NSURL+UTI.m in Sources */ = {isa = PBXBuildFile; fileRef = C58772C723D19E5F00F89D76 /* NSURL+UTI.m */; };
+		C58772CC23D19E8D00F89D76 /* NSArray+IndexSetAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = C58772CA23D19E8D00F89D76 /* NSArray+IndexSetAdditions.m */; };
+		C58772CD23D19E8D00F89D76 /* NSArray+IndexSetAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = C58772CB23D19E8D00F89D76 /* NSArray+IndexSetAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C58772D023D19E9C00F89D76 /* UIApplication+Version.m in Sources */ = {isa = PBXBuildFile; fileRef = C58772CE23D19E9C00F89D76 /* UIApplication+Version.m */; };
+		C58772D123D19E9C00F89D76 /* UIApplication+Version.h in Headers */ = {isa = PBXBuildFile; fileRef = C58772CF23D19E9C00F89D76 /* UIApplication+Version.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C58772D423D19F3C00F89D76 /* UIImage+MMRotation.h in Headers */ = {isa = PBXBuildFile; fileRef = C58772D223D19F3C00F89D76 /* UIImage+MMRotation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C58772D523D19F3C00F89D76 /* UIImage+MMRotation.m in Sources */ = {isa = PBXBuildFile; fileRef = C58772D323D19F3C00F89D76 /* UIImage+MMRotation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +62,26 @@
 		C587729223D185D300F89D76 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		C587729523D1873B00F89D76 /* MMVector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMVector.m; sourceTree = "<group>"; };
 		C587729623D1873B00F89D76 /* MMVector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMVector.h; sourceTree = "<group>"; };
+		C58772AE23D19E2600F89D76 /* NSMutableArray+QueueAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+QueueAdditions.h"; sourceTree = "<group>"; };
+		C58772AF23D19E2700F89D76 /* NSMutableSet+Extras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableSet+Extras.m"; sourceTree = "<group>"; };
+		C58772B023D19E2700F89D76 /* NSMutableSet+Extras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableSet+Extras.h"; sourceTree = "<group>"; };
+		C58772B123D19E2700F89D76 /* UIFont+UIBezierPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+UIBezierPath.h"; sourceTree = "<group>"; };
+		C58772B223D19E2700F89D76 /* NSMutableArray+StackAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+StackAdditions.m"; sourceTree = "<group>"; };
+		C58772B323D19E2700F89D76 /* NSIndexSet+Map.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSIndexSet+Map.h"; sourceTree = "<group>"; };
+		C58772B423D19E2700F89D76 /* UIFont+UIBezierPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+UIBezierPath.m"; sourceTree = "<group>"; };
+		C58772B523D19E2700F89D76 /* NSMutableArray+QueueAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+QueueAdditions.m"; sourceTree = "<group>"; };
+		C58772B623D19E2700F89D76 /* NSIndexSet+Map.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSIndexSet+Map.m"; sourceTree = "<group>"; };
+		C58772B723D19E2700F89D76 /* NSMutableArray+StackAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+StackAdditions.h"; sourceTree = "<group>"; };
+		C58772C223D19E4A00F89D76 /* NSArray+Extras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Extras.h"; sourceTree = "<group>"; };
+		C58772C323D19E4A00F89D76 /* NSArray+Extras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Extras.m"; sourceTree = "<group>"; };
+		C58772C623D19E5F00F89D76 /* NSURL+UTI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+UTI.h"; sourceTree = "<group>"; };
+		C58772C723D19E5F00F89D76 /* NSURL+UTI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+UTI.m"; sourceTree = "<group>"; };
+		C58772CA23D19E8D00F89D76 /* NSArray+IndexSetAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+IndexSetAdditions.m"; sourceTree = "<group>"; };
+		C58772CB23D19E8D00F89D76 /* NSArray+IndexSetAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+IndexSetAdditions.h"; sourceTree = "<group>"; };
+		C58772CE23D19E9C00F89D76 /* UIApplication+Version.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+Version.m"; sourceTree = "<group>"; };
+		C58772CF23D19E9C00F89D76 /* UIApplication+Version.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+Version.h"; sourceTree = "<group>"; };
+		C58772D223D19F3C00F89D76 /* UIImage+MMRotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+MMRotation.h"; sourceTree = "<group>"; };
+		C58772D323D19F3C00F89D76 /* UIImage+MMRotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+MMRotation.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,10 +131,30 @@
 				C587725B23D1820000F89D76 /* NSArray+MapReduce.m */,
 				C587724B23D1813100F89D76 /* NSFileManager+Helper.h */,
 				C587724C23D1813100F89D76 /* NSFileManager+Helper.m */,
+				C58772B323D19E2700F89D76 /* NSIndexSet+Map.h */,
+				C58772B623D19E2700F89D76 /* NSIndexSet+Map.m */,
+				C58772C223D19E4A00F89D76 /* NSArray+Extras.h */,
+				C58772C323D19E4A00F89D76 /* NSArray+Extras.m */,
+				C58772CB23D19E8D00F89D76 /* NSArray+IndexSetAdditions.h */,
+				C58772CA23D19E8D00F89D76 /* NSArray+IndexSetAdditions.m */,
+				C58772B023D19E2700F89D76 /* NSMutableSet+Extras.h */,
+				C58772AF23D19E2700F89D76 /* NSMutableSet+Extras.m */,
+				C58772AE23D19E2600F89D76 /* NSMutableArray+QueueAdditions.h */,
+				C58772B523D19E2700F89D76 /* NSMutableArray+QueueAdditions.m */,
+				C58772B723D19E2700F89D76 /* NSMutableArray+StackAdditions.h */,
+				C58772B223D19E2700F89D76 /* NSMutableArray+StackAdditions.m */,
 				C587725723D181F700F89D76 /* NSThread+BlockAdditions.h */,
 				C587725823D181F700F89D76 /* NSThread+BlockAdditions.m */,
+				C58772C623D19E5F00F89D76 /* NSURL+UTI.h */,
+				C58772C723D19E5F00F89D76 /* NSURL+UTI.m */,
+				C58772CF23D19E9C00F89D76 /* UIApplication+Version.h */,
+				C58772CE23D19E9C00F89D76 /* UIApplication+Version.m */,
 				C587726423D1821600F89D76 /* UIColor+MMToolbox.h */,
 				C587726323D1821600F89D76 /* UIColor+MMToolbox.m */,
+				C58772B123D19E2700F89D76 /* UIFont+UIBezierPath.h */,
+				C58772B423D19E2700F89D76 /* UIFont+UIBezierPath.m */,
+				C58772D223D19F3C00F89D76 /* UIImage+MMRotation.h */,
+				C58772D323D19F3C00F89D76 /* UIImage+MMRotation.m */,
 				C587725F23D1820C00F89D76 /* UIView+AnchorPoint.h */,
 				C587726023D1820C00F89D76 /* UIView+AnchorPoint.m */,
 			);
@@ -117,14 +177,24 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C58772D423D19F3C00F89D76 /* UIImage+MMRotation.h in Headers */,
 				C587725923D181F700F89D76 /* NSThread+BlockAdditions.h in Headers */,
+				C58772B823D19E2700F89D76 /* NSMutableArray+QueueAdditions.h in Headers */,
 				C587729423D185D300F89D76 /* Constants.h in Headers */,
+				C58772C823D19E5F00F89D76 /* NSURL+UTI.h in Headers */,
+				C58772C123D19E2700F89D76 /* NSMutableArray+StackAdditions.h in Headers */,
+				C58772D123D19E9C00F89D76 /* UIApplication+Version.h in Headers */,
 				C587724523D1802B00F89D76 /* MMToolbox.h in Headers */,
 				C587726623D1821600F89D76 /* UIColor+MMToolbox.h in Headers */,
+				C58772BB23D19E2700F89D76 /* UIFont+UIBezierPath.h in Headers */,
 				C587726123D1820C00F89D76 /* UIView+AnchorPoint.h in Headers */,
+				C58772C423D19E4A00F89D76 /* NSArray+Extras.h in Headers */,
+				C58772BA23D19E2700F89D76 /* NSMutableSet+Extras.h in Headers */,
+				C58772BD23D19E2700F89D76 /* NSIndexSet+Map.h in Headers */,
 				C587729823D1873B00F89D76 /* MMVector.h in Headers */,
 				C587724D23D1813100F89D76 /* NSFileManager+Helper.h in Headers */,
 				C587725E23D1820000F89D76 /* NSArray+MapReduce.h in Headers */,
+				C58772CD23D19E8D00F89D76 /* NSArray+IndexSetAdditions.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,11 +267,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				C587725A23D181F700F89D76 /* NSThread+BlockAdditions.m in Sources */,
+				C58772B923D19E2700F89D76 /* NSMutableSet+Extras.m in Sources */,
 				C587729723D1873B00F89D76 /* MMVector.m in Sources */,
+				C58772BC23D19E2700F89D76 /* NSMutableArray+StackAdditions.m in Sources */,
 				C587724E23D1813100F89D76 /* NSFileManager+Helper.m in Sources */,
+				C58772D023D19E9C00F89D76 /* UIApplication+Version.m in Sources */,
+				C58772BE23D19E2700F89D76 /* UIFont+UIBezierPath.m in Sources */,
+				C58772BF23D19E2700F89D76 /* NSMutableArray+QueueAdditions.m in Sources */,
 				C587726223D1820C00F89D76 /* UIView+AnchorPoint.m in Sources */,
 				C587725D23D1820000F89D76 /* NSArray+MapReduce.m in Sources */,
+				C58772D523D19F3C00F89D76 /* UIImage+MMRotation.m in Sources */,
+				C58772C923D19E5F00F89D76 /* NSURL+UTI.m in Sources */,
+				C58772CC23D19E8D00F89D76 /* NSArray+IndexSetAdditions.m in Sources */,
+				C58772C023D19E2700F89D76 /* NSIndexSet+Map.m in Sources */,
 				C587726523D1821600F89D76 /* UIColor+MMToolbox.m in Sources */,
+				C58772C523D19E4A00F89D76 /* NSArray+Extras.m in Sources */,
 				C587729323D185D300F89D76 /* Constants.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

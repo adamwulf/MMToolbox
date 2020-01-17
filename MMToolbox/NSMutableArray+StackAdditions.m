@@ -1,0 +1,34 @@
+//
+//  NSMutableArray+StackAdditions.m
+//  Loose Leaf
+//
+//  Created by Adam Wulf on 6/18/12.
+//  Copyright (c) 2012 Milestone Made, LLC. All rights reserved.
+//
+
+#import "NSMutableArray+StackAdditions.h"
+
+
+@implementation NSMutableArray (StackAdditions)
+
+- (id)peek
+{
+    return [self lastObject];
+}
+
+- (id)pop
+{
+    // nil if [self count] == 0
+    id __strong lastObject = [self lastObject];
+    if (lastObject) {
+        [self removeLastObject];
+    }
+    return lastObject;
+}
+
+- (void)push:(id)obj
+{
+    [self addObject:obj];
+}
+
+@end
