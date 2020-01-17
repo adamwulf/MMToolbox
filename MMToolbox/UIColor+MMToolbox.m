@@ -17,7 +17,6 @@ static char COLOR_COMPONENTS;
 - (void)getRGBAComponents:(GLfloat[4])components
 {
     size_t numComponents = CGColorGetNumberOfComponents(self.CGColor);
-    ;
     const CGFloat *cmps = CGColorGetComponents(self.CGColor);
 
     if (numComponents == 4) {
@@ -38,7 +37,6 @@ static char COLOR_COMPONENTS;
 
 - (NSMutableDictionary *)colorProperties
 {
-    //    objc_getAssociatedObject(<#id object#>, <#const void *key#>)
     id props = objc_getAssociatedObject(self, &COLOR_COMPONENTS);
     if (!props) {
         props = [[NSMutableDictionary alloc] initWithCapacity:4];

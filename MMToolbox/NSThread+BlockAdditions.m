@@ -12,19 +12,12 @@
 
 @interface NSThread (Private)
 
-CGFloat BNRTimeBlock(void (^block)(void));
-
 @end
 
 
 @implementation NSThread (BlockAdditions)
 
 + (CGFloat)timeBlock:(void (^)(void))block
-{
-    return BNRTimeBlock(block);
-}
-
-CGFloat BNRTimeBlock(void (^block)(void))
 {
     mach_timebase_info_data_t info;
     if (mach_timebase_info(&info) != KERN_SUCCESS)
@@ -37,9 +30,7 @@ CGFloat BNRTimeBlock(void (^block)(void))
 
     uint64_t nanos = elapsed * info.numer / info.denom;
     return (CGFloat)nanos / NSEC_PER_SEC;
-
-} // BNRTimeBlock
-
+}
 
 - (void)performBlock:(void (^)(void))block
 {
@@ -48,6 +39,7 @@ CGFloat BNRTimeBlock(void (^block)(void))
     else
         [self performBlock:block waitUntilDone:NO];
 }
+
 - (void)performBlock:(void (^)(void))block waitUntilDone:(BOOL)wait
 {
     [NSThread performSelector:@selector(ng_runBlock:)
@@ -55,15 +47,18 @@ CGFloat BNRTimeBlock(void (^block)(void))
                    withObject:[block copy]
                 waitUntilDone:wait];
 }
+
 + (void)ng_runBlock:(void (^)(void))block
 {
     block();
 }
+
 + (void)performBlockInBackground:(void (^)(void))block
 {
     [NSThread performSelectorInBackground:@selector(ng_runBlock:)
                                withObject:[block copy]];
 }
+
 + (void)performBlockOnMainThread:(void (^)(void))block
 {
     if ([NSThread isMainThread]) {
@@ -82,9 +77,9 @@ CGFloat BNRTimeBlock(void (^block)(void))
     }
 }
 
-
 - (void)performBlock:(void (^)(void))block afterDelay:(NSTimeInterval)delay
 {
     [self performSelector:@selector(performBlock:) withObject:[block copy] afterDelay:delay];
 }
+
 @end

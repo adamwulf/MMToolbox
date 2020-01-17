@@ -14,9 +14,15 @@
 + (CGFloat)timeBlock:(void (^)(void))block;
 
 - (void)performBlock:(void (^)(void))block;
+
 - (void)performBlock:(void (^)(void))block waitUntilDone:(BOOL)wait;
+
 + (void)performBlockInBackground:(void (^)(void))block;
+
 + (void)performBlockOnMainThread:(void (^)(void))block;
+
 + (void)performBlockOnMainThreadSync:(void (^)(void))block;
+
 - (void)performBlock:(void (^)(void))block afterDelay:(NSTimeInterval)delay;
+
 @end
