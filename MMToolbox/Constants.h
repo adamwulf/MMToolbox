@@ -10,6 +10,12 @@
 
 #define kAbstractMethodException [NSException exceptionWithName:NSInternalInconsistencyException reason:[NSString stringWithFormat:@"You must override %@ in a subclass", NSStringFromSelector(_cmd)] userInfo:nil]
 
+#ifdef DEBUG
+#define DebugLog(__FORMAT__, ...) NSLog(__FORMAT__, ##__VA_ARGS__)
+#else
+#define DebugLog(__FORMAT__, ...)
+#endif
+
 static inline CGRect _CGSizeAspectFillFit(CGSize sizeToScale, CGSize sizeToFill, BOOL fill)
 {
     CGFloat horizontalRatio = sizeToFill.width / sizeToScale.width;
