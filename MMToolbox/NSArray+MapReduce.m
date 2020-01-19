@@ -111,7 +111,7 @@
             return range.location;
         } else if (options == NSBinarySearchingLastEqual) {
             if (range.location > 0) {
-                return range.location - 1;
+                return [self _indexPassingTest:enumerator inRange:NSMakeRange(range.location - 1, 0) options:NSBinarySearchingFirstEqual];
             } else {
                 return NSNotFound;
             }
@@ -123,18 +123,33 @@
     NSInteger testIndex = NSMidRange(range);
     NSComparisonResult result = enumerator([self objectAtIndex:testIndex], testIndex);
 
-    if (range.length == 0 && result != NSOrderedSame && options == NSBinarySearchingFirstEqual) {
+    if (options == NSBinarySearchingFirstEqual && range.length == 0 && result != NSOrderedSame) {
         return NSNotFound;
-    } else if (result == NSOrderedSame && options == NSBinarySearchingInsertionIndex) {
-        return [self _indexPassingTest:enumerator inRange:NSMakeRange(testIndex, 0) options:options];
-    } else if (result == NSOrderedAscending || (result == NSOrderedSame && options == NSBinarySearchingFirstEqual && range.length > 0)) {
+    } else if (result == NSOrderedAscending) {
         return [self _indexPassingTest:enumerator inRange:NSMakeRange(range.location, testIndex - range.location) options:options];
     } else if (result == NSOrderedDescending) {
         return [self _indexPassingTest:enumerator inRange:NSMakeRange(testIndex + 1, range.length - (testIndex - range.location) - 1) options:options];
-    } else if (result == NSOrderedSame && options == NSBinarySearchingLastEqual && range.length > 0) {
-        return [self _indexPassingTest:enumerator inRange:NSMakeRange(testIndex + 1, range.length - (testIndex - range.location) - 1) options:options];
     } else {
-        return testIndex; // NSOrderedSame
+        // NSOrderedSame
+        if (range.length == 0) {
+            return testIndex;
+        } else {
+            switch (options) {
+                case NSBinarySearchingInsertionIndex:
+                    return testIndex;
+                    break;
+                case NSBinarySearchingFirstEqual:
+                    // recur on the first half of the range
+                    return [self _indexPassingTest:enumerator inRange:NSMakeRange(range.location, testIndex - range.location) options:options];
+                    break;
+                case NSBinarySearchingLastEqual:
+                    // recur on second half of range, not including the equal to index
+                    // (our targetIndex is aiming to be the index immediately after the last OrderedSame,
+                    //  and we'll subtract 1 from the index when we finish)
+                    return [self _indexPassingTest:enumerator inRange:NSMakeRange(testIndex + 1, range.length - (testIndex - range.location) - 1) options:options];
+                    break;
+            }
+        }
     }
 }
 
