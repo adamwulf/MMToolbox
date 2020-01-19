@@ -152,14 +152,14 @@
 		C587725223D181D500F89D76 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				C58772C223D19E4A00F89D76 /* NSArray+Extras.h */,
+				C58772C323D19E4A00F89D76 /* NSArray+Extras.m */,
 				C587725C23D1820000F89D76 /* NSArray+MapReduce.h */,
 				C587725B23D1820000F89D76 /* NSArray+MapReduce.m */,
 				C587724B23D1813100F89D76 /* NSFileManager+Helper.h */,
 				C587724C23D1813100F89D76 /* NSFileManager+Helper.m */,
 				C58772B323D19E2700F89D76 /* NSIndexSet+Map.h */,
 				C58772B623D19E2700F89D76 /* NSIndexSet+Map.m */,
-				C58772C223D19E4A00F89D76 /* NSArray+Extras.h */,
-				C58772C323D19E4A00F89D76 /* NSArray+Extras.m */,
 				C58772CB23D19E8D00F89D76 /* NSArray+IndexSetAdditions.h */,
 				C58772CA23D19E8D00F89D76 /* NSArray+IndexSetAdditions.m */,
 				C58772B023D19E2700F89D76 /* NSMutableSet+Extras.h */,

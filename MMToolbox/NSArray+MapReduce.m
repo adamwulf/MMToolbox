@@ -106,19 +106,25 @@
 
 - (NSInteger)_indexPassingTest:(NSComparisonResult (^)(id obj, NSInteger index))enumerator inRange:(NSRange)range options:(NSBinarySearchingOptions)options
 {
-    if (range.length == 1) {
-        return range.location;
+    if (range.length == 0) {
+        if (options == NSBinarySearchingInsertionIndex) {
+            return range.location;
+        } else if (options == NSBinarySearchingLastEqual) {
+            return range.location - 1;
+        }
     }
 
     NSInteger testIndex = NSMidRange(range);
     NSComparisonResult result = enumerator([self objectAtIndex:testIndex], testIndex);
 
-    if (result == NSOrderedAscending || (result == NSOrderedSame && options == NSBinarySearchingFirstEqual)) {
+    if (result == NSOrderedSame && options == NSBinarySearchingInsertionIndex) {
+        return [self _indexPassingTest:enumerator inRange:NSMakeRange(testIndex, 0) options:options];
+    } else if (result == NSOrderedAscending || (result == NSOrderedSame && options == NSBinarySearchingFirstEqual && range.length > 0)) {
         return [self _indexPassingTest:enumerator inRange:NSMakeRange(range.location, testIndex - range.location) options:options];
     } else if (result == NSOrderedDescending) {
         return [self _indexPassingTest:enumerator inRange:NSMakeRange(testIndex + 1, range.length - (testIndex - range.location) - 1) options:options];
-    } else if (result == NSOrderedSame && options == NSBinarySearchingLastEqual) {
-        return [self _indexPassingTest:enumerator inRange:NSMakeRange(testIndex, range.length - (testIndex - range.location)) options:options];
+    } else if (result == NSOrderedSame && options == NSBinarySearchingLastEqual && range.length > 0) {
+        return [self _indexPassingTest:enumerator inRange:NSMakeRange(testIndex + 1, range.length - (testIndex - range.location) - 1) options:options];
     } else {
         return testIndex; // NSOrderedSame
     }

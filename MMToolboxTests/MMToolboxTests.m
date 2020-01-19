@@ -69,17 +69,17 @@
 
 - (void)testBinarySearch6
 {
-    NSArray<NSNumber *> *nums = @[@1, @1, @1, @1, @1, @2, @2, @3, @4, @4, @4, @5, @6, @8];
+    NSArray<NSNumber *> *nums = @[@1, @1, @1, @1, @1, @2, @2, @3, @4, @4, @4, @4, @4, @4, @5, @6, @8];
     NSInteger idx = [nums indexPassingTest:^NSComparisonResult(NSNumber *obj, NSInteger index) {
         return [@(4) compare:obj];
     } options:NSBinarySearchingLastEqual];
 
-    XCTAssertEqual(idx, 10);
+    XCTAssertEqual(idx, 13);
 }
 
 - (void)testBinarySearch7
 {
-    NSArray<NSNumber *> *nums = @[@1, @1, @1, @1, @1, @2, @2, @3, @4, @4, @4, @5, @6, @8];
+    NSArray<NSNumber *> *nums = @[@1, @1, @1, @1, @1, @2, @2, @3, @4, @4, @4, @4, @4, @4, @5, @6, @8];
     NSInteger idx = [nums indexPassingTest:^NSComparisonResult(NSNumber *obj, NSInteger index) {
         return [@(4) compare:obj];
     } options:NSBinarySearchingFirstEqual];
@@ -95,6 +95,27 @@
     } options:NSBinarySearchingInsertionIndex];
 
     XCTAssertEqual(idx, 9);
+}
+
+- (void)testBinarySearch9
+{
+    NSArray<NSNumber *> *nums = @[@1, @1, @1, @1, @1, @2, @2, @3, @4, @4, @4, @5, @6, @8];
+    NSInteger idx = [nums indexPassingTest:^NSComparisonResult(NSNumber *obj, NSInteger index) {
+        return [@(7) compare:obj];
+    } options:NSBinarySearchingInsertionIndex];
+
+    // correct insertion index for missing item
+    XCTAssertEqual(idx, 13);
+}
+
+- (void)testBinarySearch10
+{
+    NSArray<NSNumber *> *nums = @[@1, @1, @1, @1, @1, @2, @2, @3, @4, @4, @4, @5, @6, @8];
+    NSInteger idx = [nums indexPassingTest:^NSComparisonResult(NSNumber *obj, NSInteger index) {
+        return [@(9) compare:obj];
+    } options:NSBinarySearchingInsertionIndex];
+
+    XCTAssertEqual(idx, 14);
 }
 
 @end
