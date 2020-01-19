@@ -110,14 +110,22 @@
         if (options == NSBinarySearchingInsertionIndex) {
             return range.location;
         } else if (options == NSBinarySearchingLastEqual) {
-            return range.location - 1;
+            if (range.location > 0) {
+                return range.location - 1;
+            } else {
+                return NSNotFound;
+            }
+        } else if (options == NSBinarySearchingFirstEqual && NSMaxRange(range) == [self count]) {
+            return NSNotFound;
         }
     }
 
     NSInteger testIndex = NSMidRange(range);
     NSComparisonResult result = enumerator([self objectAtIndex:testIndex], testIndex);
 
-    if (result == NSOrderedSame && options == NSBinarySearchingInsertionIndex) {
+    if (range.length == 0 && result != NSOrderedSame && options == NSBinarySearchingFirstEqual) {
+        return NSNotFound;
+    } else if (result == NSOrderedSame && options == NSBinarySearchingInsertionIndex) {
         return [self _indexPassingTest:enumerator inRange:NSMakeRange(testIndex, 0) options:options];
     } else if (result == NSOrderedAscending || (result == NSOrderedSame && options == NSBinarySearchingFirstEqual && range.length > 0)) {
         return [self _indexPassingTest:enumerator inRange:NSMakeRange(range.location, testIndex - range.location) options:options];

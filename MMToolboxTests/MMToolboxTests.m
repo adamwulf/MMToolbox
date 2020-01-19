@@ -118,4 +118,34 @@
     XCTAssertEqual(idx, 14);
 }
 
+- (void)testBinarySearch11
+{
+    NSArray<NSNumber *> *nums = @[@1, @1, @1, @1, @1, @2, @2, @3, @4, @4, @4, @5, @6, @8];
+    NSInteger idx = [nums indexPassingTest:^NSComparisonResult(NSNumber *obj, NSInteger index) {
+        return [@(3.5) compare:obj];
+    } options:NSBinarySearchingFirstEqual];
+
+    XCTAssertEqual(idx, NSNotFound);
+}
+
+- (void)testBinarySearch12
+{
+    NSArray<NSNumber *> *nums = @[@1, @1, @1, @1, @1, @2, @2, @3, @4, @4, @4, @5, @6, @8];
+    NSInteger idx = [nums indexPassingTest:^NSComparisonResult(NSNumber *obj, NSInteger index) {
+        return [@(0) compare:obj];
+    } options:NSBinarySearchingFirstEqual];
+
+    XCTAssertEqual(idx, NSNotFound);
+}
+
+- (void)testBinarySearch13
+{
+    NSArray<NSNumber *> *nums = @[@1, @1, @1, @1, @1, @2, @2, @3, @4, @4, @4, @5, @6, @8];
+    NSInteger idx = [nums indexPassingTest:^NSComparisonResult(NSNumber *obj, NSInteger index) {
+        return [@(9) compare:obj];
+    } options:NSBinarySearchingFirstEqual];
+
+    XCTAssertEqual(idx, NSNotFound);
+}
+
 @end
