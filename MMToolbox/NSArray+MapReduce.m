@@ -129,26 +129,25 @@
         return [self _indexPassingTest:enumerator inRange:NSMakeRange(range.location, testIndex - range.location) options:options];
     } else if (result == NSOrderedDescending) {
         return [self _indexPassingTest:enumerator inRange:NSMakeRange(testIndex + 1, range.length - (testIndex - range.location) - 1) options:options];
+    } else if (range.length == 0) {
+        // NSOrderedSame
+        return testIndex;
     } else {
         // NSOrderedSame
-        if (range.length == 0) {
-            return testIndex;
-        } else {
-            switch (options) {
-                case NSBinarySearchingInsertionIndex:
-                    return testIndex;
-                    break;
-                case NSBinarySearchingFirstEqual:
-                    // recur on the first half of the range
-                    return [self _indexPassingTest:enumerator inRange:NSMakeRange(range.location, testIndex - range.location) options:options];
-                    break;
-                case NSBinarySearchingLastEqual:
-                    // recur on second half of range, not including the equal to index
-                    // (our targetIndex is aiming to be the index immediately after the last OrderedSame,
-                    //  and we'll subtract 1 from the index when we finish)
-                    return [self _indexPassingTest:enumerator inRange:NSMakeRange(testIndex + 1, range.length - (testIndex - range.location) - 1) options:options];
-                    break;
-            }
+        switch (options) {
+            case NSBinarySearchingInsertionIndex:
+                return testIndex;
+                break;
+            case NSBinarySearchingFirstEqual:
+                // recur on the first half of the range
+                return [self _indexPassingTest:enumerator inRange:NSMakeRange(range.location, testIndex - range.location) options:options];
+                break;
+            case NSBinarySearchingLastEqual:
+                // recur on second half of range, not including the equal to index
+                // (our targetIndex is aiming to be the index immediately after the last OrderedSame,
+                //  and we'll subtract 1 from the index when we finish)
+                return [self _indexPassingTest:enumerator inRange:NSMakeRange(testIndex + 1, range.length - (testIndex - range.location) - 1) options:options];
+                break;
         }
     }
 }
