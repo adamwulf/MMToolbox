@@ -42,7 +42,7 @@
 		C58772D123D19E9C00F89D76 /* UIApplication+Version.h in Headers */ = {isa = PBXBuildFile; fileRef = C58772CF23D19E9C00F89D76 /* UIApplication+Version.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C58772D423D19F3C00F89D76 /* UIImage+MMRotation.h in Headers */ = {isa = PBXBuildFile; fileRef = C58772D223D19F3C00F89D76 /* UIImage+MMRotation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C58772D523D19F3C00F89D76 /* UIImage+MMRotation.m in Sources */ = {isa = PBXBuildFile; fileRef = C58772D323D19F3C00F89D76 /* UIImage+MMRotation.m */; };
-		C594FF8C23D45C8100C6A6FF /* MMToolboxTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C594FF8B23D45C8100C6A6FF /* MMToolboxTests.m */; };
+		C594FF8C23D45C8100C6A6FF /* MMToolboxArrayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C594FF8B23D45C8100C6A6FF /* MMToolboxArrayTests.m */; };
 		C594FF8E23D45C8100C6A6FF /* MMToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C587724023D1802B00F89D76 /* MMToolbox.framework */; };
 /* End PBXBuildFile section */
 
@@ -95,7 +95,7 @@
 		C58772D223D19F3C00F89D76 /* UIImage+MMRotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+MMRotation.h"; sourceTree = "<group>"; };
 		C58772D323D19F3C00F89D76 /* UIImage+MMRotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+MMRotation.m"; sourceTree = "<group>"; };
 		C594FF8923D45C8100C6A6FF /* MMToolboxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MMToolboxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C594FF8B23D45C8100C6A6FF /* MMToolboxTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MMToolboxTests.m; sourceTree = "<group>"; };
+		C594FF8B23D45C8100C6A6FF /* MMToolboxArrayTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MMToolboxArrayTests.m; sourceTree = "<group>"; };
 		C594FF8D23D45C8100C6A6FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -198,7 +198,7 @@
 		C594FF8A23D45C8100C6A6FF /* MMToolboxTests */ = {
 			isa = PBXGroup;
 			children = (
-				C594FF8B23D45C8100C6A6FF /* MMToolboxTests.m */,
+				C594FF8B23D45C8100C6A6FF /* MMToolboxArrayTests.m */,
 				C594FF8D23D45C8100C6A6FF /* Info.plist */,
 			);
 			path = MMToolboxTests;
@@ -353,7 +353,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C594FF8C23D45C8100C6A6FF /* MMToolboxTests.m in Sources */,
+				C594FF8C23D45C8100C6A6FF /* MMToolboxArrayTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
