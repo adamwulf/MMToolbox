@@ -7,6 +7,7 @@
 //
 
 #import "NSArray+MapReduce.h"
+#import "Constants.h"
 
 
 @implementation NSArray (MapReduce)
@@ -85,6 +86,42 @@
 - (BOOL)containsObjectIdenticalTo:(id)anObject
 {
     return [self indexOfObjectIdenticalTo:anObject] != NSNotFound;
+}
+
+/// NSOrderedAscending the target index is before the given index
+/// NSOrderedDescending the target index is after the given index
+/// NSOrderedSame the input index is the target index
+- (NSInteger)indexPassingTest:(NSComparisonResult (^)(id obj, NSInteger index))enumerator
+{
+    return [self indexPassingTest:enumerator options:NSBinarySearchingInsertionIndex];
+}
+
+/// NSBinarySearchingFirstEqual will find the earliest index that returns NSOrderedSame
+/// NSBinarySearchingLastEqual will find the latest index that returns NSOrderedSame
+/// NSBinarySearchingInsertionIndex will return the first index that returns NSOrderedSame
+- (NSInteger)indexPassingTest:(NSComparisonResult (^)(id obj, NSInteger index))enumerator options:(NSBinarySearchingOptions)options
+{
+    return [self _indexPassingTest:enumerator inRange:NSMakeRange(0, [self count]) options:options];
+}
+
+- (NSInteger)_indexPassingTest:(NSComparisonResult (^)(id obj, NSInteger index))enumerator inRange:(NSRange)range options:(NSBinarySearchingOptions)options
+{
+    if (range.length == 1) {
+        return range.location;
+    }
+
+    NSInteger testIndex = NSMidRange(range);
+    NSComparisonResult result = enumerator([self objectAtIndex:testIndex], testIndex);
+
+    if (result == NSOrderedAscending || (result == NSOrderedSame && options == NSBinarySearchingFirstEqual)) {
+        return [self _indexPassingTest:enumerator inRange:NSMakeRange(range.location, testIndex - range.location) options:options];
+    } else if (result == NSOrderedDescending) {
+        return [self _indexPassingTest:enumerator inRange:NSMakeRange(testIndex + 1, range.length - (testIndex - range.location) - 1) options:options];
+    } else if (result == NSOrderedSame && options == NSBinarySearchingLastEqual) {
+        return [self _indexPassingTest:enumerator inRange:NSMakeRange(testIndex, range.length - (testIndex - range.location)) options:options];
+    } else {
+        return testIndex; // NSOrderedSame
+    }
 }
 
 @end

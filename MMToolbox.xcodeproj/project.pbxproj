@@ -42,7 +42,19 @@
 		C58772D123D19E9C00F89D76 /* UIApplication+Version.h in Headers */ = {isa = PBXBuildFile; fileRef = C58772CF23D19E9C00F89D76 /* UIApplication+Version.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C58772D423D19F3C00F89D76 /* UIImage+MMRotation.h in Headers */ = {isa = PBXBuildFile; fileRef = C58772D223D19F3C00F89D76 /* UIImage+MMRotation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C58772D523D19F3C00F89D76 /* UIImage+MMRotation.m in Sources */ = {isa = PBXBuildFile; fileRef = C58772D323D19F3C00F89D76 /* UIImage+MMRotation.m */; };
+		C594FF8C23D45C8100C6A6FF /* MMToolboxTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C594FF8B23D45C8100C6A6FF /* MMToolboxTests.m */; };
+		C594FF8E23D45C8100C6A6FF /* MMToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C587724023D1802B00F89D76 /* MMToolbox.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C594FF8F23D45C8100C6A6FF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C587723723D1802B00F89D76 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C587723F23D1802B00F89D76;
+			remoteInfo = MMToolbox;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		C587724023D1802B00F89D76 /* MMToolbox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MMToolbox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -82,6 +94,9 @@
 		C58772CF23D19E9C00F89D76 /* UIApplication+Version.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+Version.h"; sourceTree = "<group>"; };
 		C58772D223D19F3C00F89D76 /* UIImage+MMRotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+MMRotation.h"; sourceTree = "<group>"; };
 		C58772D323D19F3C00F89D76 /* UIImage+MMRotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+MMRotation.m"; sourceTree = "<group>"; };
+		C594FF8923D45C8100C6A6FF /* MMToolboxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MMToolboxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C594FF8B23D45C8100C6A6FF /* MMToolboxTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MMToolboxTests.m; sourceTree = "<group>"; };
+		C594FF8D23D45C8100C6A6FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +107,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C594FF8623D45C8100C6A6FF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C594FF8E23D45C8100C6A6FF /* MMToolbox.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -99,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				C587724223D1802B00F89D76 /* MMToolbox */,
+				C594FF8A23D45C8100C6A6FF /* MMToolboxTests */,
 				C587724123D1802B00F89D76 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -107,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				C587724023D1802B00F89D76 /* MMToolbox.framework */,
+				C594FF8923D45C8100C6A6FF /* MMToolboxTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -170,6 +195,15 @@
 			name = Classes;
 			sourceTree = "<group>";
 		};
+		C594FF8A23D45C8100C6A6FF /* MMToolboxTests */ = {
+			isa = PBXGroup;
+			children = (
+				C594FF8B23D45C8100C6A6FF /* MMToolboxTests.m */,
+				C594FF8D23D45C8100C6A6FF /* Info.plist */,
+			);
+			path = MMToolboxTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -219,6 +253,24 @@
 			productReference = C587724023D1802B00F89D76 /* MMToolbox.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		C594FF8823D45C8100C6A6FF /* MMToolboxTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C594FF9323D45C8100C6A6FF /* Build configuration list for PBXNativeTarget "MMToolboxTests" */;
+			buildPhases = (
+				C594FF8523D45C8100C6A6FF /* Sources */,
+				C594FF8623D45C8100C6A6FF /* Frameworks */,
+				C594FF8723D45C8100C6A6FF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C594FF9023D45C8100C6A6FF /* PBXTargetDependency */,
+			);
+			name = MMToolboxTests;
+			productName = MMToolboxTests;
+			productReference = C594FF8923D45C8100C6A6FF /* MMToolboxTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -229,6 +281,9 @@
 				ORGANIZATIONNAME = "Milestone Made";
 				TargetAttributes = {
 					C587723F23D1802B00F89D76 = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+					C594FF8823D45C8100C6A6FF = {
 						CreatedOnToolsVersion = 11.3.1;
 					};
 				};
@@ -247,12 +302,20 @@
 			projectRoot = "";
 			targets = (
 				C587723F23D1802B00F89D76 /* MMToolbox */,
+				C594FF8823D45C8100C6A6FF /* MMToolboxTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		C587723E23D1802B00F89D76 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C594FF8723D45C8100C6A6FF /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -286,7 +349,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C594FF8523D45C8100C6A6FF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C594FF8C23D45C8100C6A6FF /* MMToolboxTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C594FF9023D45C8100C6A6FF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C587723F23D1802B00F89D76 /* MMToolbox */;
+			targetProxy = C594FF8F23D45C8100C6A6FF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		C587724623D1802B00F89D76 /* Debug */ = {
@@ -451,6 +530,40 @@
 			};
 			name = Release;
 		};
+		C594FF9123D45C8100C6A6FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MU27A4SCKC;
+				INFOPLIST_FILE = MMToolboxTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.milestonemade.MMToolboxTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C594FF9223D45C8100C6A6FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MU27A4SCKC;
+				INFOPLIST_FILE = MMToolboxTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.milestonemade.MMToolboxTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -468,6 +581,15 @@
 			buildConfigurations = (
 				C587724923D1802B00F89D76 /* Debug */,
 				C587724A23D1802B00F89D76 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C594FF9323D45C8100C6A6FF /* Build configuration list for PBXNativeTarget "MMToolboxTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C594FF9123D45C8100C6A6FF /* Debug */,
+				C594FF9223D45C8100C6A6FF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -34,6 +34,8 @@ static inline CGRect _CGSizeAspectFillFit(CGSize sizeToScale, CGSize sizeToFill,
 
 #define PROPERTYNAME(name) NSStringFromSelector(@selector(name))
 
+#define NSMidRange(range) (range.location + range.length / 2)
+
 #define CGRectResizeBy(rect, dw, dh) CGRectMake(rect.origin.x, rect.origin.y, rect.size.width + dw, rect.size.height + dh)
 #define CGRectGetMidPoint(rect) CGPointMake(CGRectGetMidX(rect), CGRectGetMidY(rect))
 #define CGRectFromSize(size) CGRectMake(0, 0, size.width, size.height)

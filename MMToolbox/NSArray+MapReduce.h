@@ -25,4 +25,10 @@
 
 - (BOOL)containsObjectIdenticalTo:(T)anObject;
 
+// the returned NSComparisonResult should treat the input obj as the right hand argument of compare:
+// so for an array of numbers, the enumerator could be [@targetNum compare:obj];
+- (NSInteger)indexPassingTest:(NSComparisonResult (^)(T obj, NSInteger index))enumerator;
+
+- (NSInteger)indexPassingTest:(NSComparisonResult (^)(T obj, NSInteger index))enumerator options:(NSBinarySearchingOptions)options;
+
 @end
