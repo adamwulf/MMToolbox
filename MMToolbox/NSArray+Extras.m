@@ -67,6 +67,17 @@
     return [self indexOfObjectIdenticalTo:anObject] != NSNotFound;
 }
 
+- (id)sortedObjectPassingTest:(NSComparisonResult (^)(id obj, NSInteger index))enumerator
+{
+    NSInteger index = [self sortedIndexPassingTest:enumerator options:NSBinarySearchingFirstEqual];
+
+    if (index != NSNotFound) {
+        return [self objectAtIndex:index];
+    }
+
+    return nil;
+}
+
 /// NSOrderedAscending the target index is before the given index
 /// NSOrderedDescending the target index is after the given index
 /// NSOrderedSame the input index is the target index

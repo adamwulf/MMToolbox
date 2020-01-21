@@ -31,6 +31,8 @@
 
 - (NSInteger)sortedIndexPassingTest:(NSComparisonResult (^)(T obj, NSInteger index))enumerator options:(NSBinarySearchingOptions)options;
 
+- (T)sortedObjectPassingTest:(NSComparisonResult (^)(T obj, NSInteger index))enumerator;
+
 @end
 
 
