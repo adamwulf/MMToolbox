@@ -20,7 +20,7 @@
 - (void)testBinarySearch1
 {
     NSArray<NSNumber *> *nums = @[@1, @3, @4, @9];
-    NSInteger idx = [nums indexPassingTest:^NSComparisonResult(NSNumber *obj, NSInteger index) {
+    NSInteger idx = [nums sortedIndexPassingTest:^NSComparisonResult(NSNumber *obj, NSInteger index) {
         return [@(4) compare:obj];
     }];
 
@@ -30,7 +30,7 @@
 - (void)testBinarySearch2
 {
     NSArray<NSNumber *> *nums = @[@1, @3, @4];
-    NSInteger idx = [nums indexPassingTest:^NSComparisonResult(NSNumber *obj, NSInteger index) {
+    NSInteger idx = [nums sortedIndexPassingTest:^NSComparisonResult(NSNumber *obj, NSInteger index) {
         return [@(4) compare:obj];
     }];
 
@@ -40,7 +40,7 @@
 - (void)testBinarySearch3
 {
     NSArray<NSNumber *> *nums = @[@1, @3, @4, @4, @4, @8];
-    NSInteger idx = [nums indexPassingTest:^NSComparisonResult(NSNumber *obj, NSInteger index) {
+    NSInteger idx = [nums sortedIndexPassingTest:^NSComparisonResult(NSNumber *obj, NSInteger index) {
         return [@(4) compare:obj];
     }];
 
@@ -50,7 +50,7 @@
 - (void)testBinarySearch4
 {
     NSArray<NSNumber *> *nums = @[@1, @3, @4, @4, @4, @8];
-    NSInteger idx = [nums indexPassingTest:^NSComparisonResult(NSNumber *obj, NSInteger index) {
+    NSInteger idx = [nums sortedIndexPassingTest:^NSComparisonResult(NSNumber *obj, NSInteger index) {
         return [@(4) compare:obj];
     } options:NSBinarySearchingFirstEqual];
 
@@ -60,7 +60,7 @@
 - (void)testBinarySearch5
 {
     NSArray<NSNumber *> *nums = @[@1, @3, @4, @4, @4, @8];
-    NSInteger idx = [nums indexPassingTest:^NSComparisonResult(NSNumber *obj, NSInteger index) {
+    NSInteger idx = [nums sortedIndexPassingTest:^NSComparisonResult(NSNumber *obj, NSInteger index) {
         return [@(4) compare:obj];
     } options:NSBinarySearchingLastEqual];
 
@@ -70,7 +70,7 @@
 - (void)testBinarySearch6
 {
     NSArray<NSNumber *> *nums = @[@1, @1, @1, @1, @1, @2, @2, @3, @4, @4, @4, @4, @4, @4, @5, @6, @8];
-    NSInteger idx = [nums indexPassingTest:^NSComparisonResult(NSNumber *obj, NSInteger index) {
+    NSInteger idx = [nums sortedIndexPassingTest:^NSComparisonResult(NSNumber *obj, NSInteger index) {
         return [@(4) compare:obj];
     } options:NSBinarySearchingLastEqual];
 
@@ -80,7 +80,7 @@
 - (void)testBinarySearch7
 {
     NSArray<NSNumber *> *nums = @[@1, @1, @1, @1, @1, @2, @2, @3, @4, @4, @4, @4, @4, @4, @5, @6, @8];
-    NSInteger idx = [nums indexPassingTest:^NSComparisonResult(NSNumber *obj, NSInteger index) {
+    NSInteger idx = [nums sortedIndexPassingTest:^NSComparisonResult(NSNumber *obj, NSInteger index) {
         return [@(4) compare:obj];
     } options:NSBinarySearchingFirstEqual];
 
@@ -90,7 +90,7 @@
 - (void)testBinarySearch8
 {
     NSArray<NSNumber *> *nums = @[@1, @1, @1, @1, @1, @2, @2, @3, @4, @4, @4, @5, @6, @8];
-    NSInteger idx = [nums indexPassingTest:^NSComparisonResult(NSNumber *obj, NSInteger index) {
+    NSInteger idx = [nums sortedIndexPassingTest:^NSComparisonResult(NSNumber *obj, NSInteger index) {
         return [@(4) compare:obj];
     } options:NSBinarySearchingInsertionIndex];
 
@@ -100,7 +100,7 @@
 - (void)testBinarySearch9
 {
     NSArray<NSNumber *> *nums = @[@1, @1, @1, @1, @1, @2, @2, @3, @4, @4, @4, @5, @6, @8];
-    NSInteger idx = [nums indexPassingTest:^NSComparisonResult(NSNumber *obj, NSInteger index) {
+    NSInteger idx = [nums sortedIndexPassingTest:^NSComparisonResult(NSNumber *obj, NSInteger index) {
         return [@(7) compare:obj];
     } options:NSBinarySearchingInsertionIndex];
 
@@ -111,7 +111,7 @@
 - (void)testBinarySearch10
 {
     NSArray<NSNumber *> *nums = @[@1, @1, @1, @1, @1, @2, @2, @3, @4, @4, @4, @5, @6, @8];
-    NSInteger idx = [nums indexPassingTest:^NSComparisonResult(NSNumber *obj, NSInteger index) {
+    NSInteger idx = [nums sortedIndexPassingTest:^NSComparisonResult(NSNumber *obj, NSInteger index) {
         return [@(9) compare:obj];
     } options:NSBinarySearchingInsertionIndex];
 
@@ -121,7 +121,7 @@
 - (void)testBinarySearch11
 {
     NSArray<NSNumber *> *nums = @[@1, @1, @1, @1, @1, @2, @2, @3, @4, @4, @4, @5, @6, @8];
-    NSInteger idx = [nums indexPassingTest:^NSComparisonResult(NSNumber *obj, NSInteger index) {
+    NSInteger idx = [nums sortedIndexPassingTest:^NSComparisonResult(NSNumber *obj, NSInteger index) {
         return [@(3.5) compare:obj];
     } options:NSBinarySearchingFirstEqual];
 
@@ -131,7 +131,7 @@
 - (void)testBinarySearch12
 {
     NSArray<NSNumber *> *nums = @[@1, @1, @1, @1, @1, @2, @2, @3, @4, @4, @4, @5, @6, @8];
-    NSInteger idx = [nums indexPassingTest:^NSComparisonResult(NSNumber *obj, NSInteger index) {
+    NSInteger idx = [nums sortedIndexPassingTest:^NSComparisonResult(NSNumber *obj, NSInteger index) {
         return [@(0) compare:obj];
     } options:NSBinarySearchingFirstEqual];
 
@@ -141,7 +141,7 @@
 - (void)testBinarySearch13
 {
     NSArray<NSNumber *> *nums = @[@1, @1, @1, @1, @1, @2, @2, @3, @4, @4, @4, @5, @6, @8];
-    NSInteger idx = [nums indexPassingTest:^NSComparisonResult(NSNumber *obj, NSInteger index) {
+    NSInteger idx = [nums sortedIndexPassingTest:^NSComparisonResult(NSNumber *obj, NSInteger index) {
         return [@(9) compare:obj];
     } options:NSBinarySearchingFirstEqual];
 
@@ -151,7 +151,7 @@
 - (void)testBinarySearch14
 {
     NSArray<NSNumber *> *nums = @[@1, @1, @1, @1, @1, @2, @2, @3, @4, @4, @4, @5, @6, @8];
-    NSInteger idx = [nums indexPassingTest:^NSComparisonResult(NSNumber *obj, NSInteger index) {
+    NSInteger idx = [nums sortedIndexPassingTest:^NSComparisonResult(NSNumber *obj, NSInteger index) {
         return [@(1) compare:obj];
     } options:NSBinarySearchingFirstEqual];
 
@@ -161,7 +161,7 @@
 - (void)testBinarySearch15
 {
     NSArray<NSNumber *> *nums = @[@1, @1, @1, @1, @1, @2, @2, @3, @4, @4, @4, @5, @6, @8];
-    NSInteger idx = [nums indexPassingTest:^NSComparisonResult(NSNumber *obj, NSInteger index) {
+    NSInteger idx = [nums sortedIndexPassingTest:^NSComparisonResult(NSNumber *obj, NSInteger index) {
         return [@(1) compare:obj];
     } options:NSBinarySearchingLastEqual];
 
@@ -171,7 +171,7 @@
 - (void)testBinarySearch16
 {
     NSArray<NSNumber *> *nums = @[@1];
-    NSInteger idx = [nums indexPassingTest:^NSComparisonResult(NSNumber *obj, NSInteger index) {
+    NSInteger idx = [nums sortedIndexPassingTest:^NSComparisonResult(NSNumber *obj, NSInteger index) {
         return [@(2) compare:obj];
     } options:NSBinarySearchingInsertionIndex];
 
@@ -181,7 +181,7 @@
 - (void)testBinarySearch17
 {
     NSArray<NSNumber *> *nums = @[@1];
-    NSInteger idx = [nums indexPassingTest:^NSComparisonResult(NSNumber *obj, NSInteger index) {
+    NSInteger idx = [nums sortedIndexPassingTest:^NSComparisonResult(NSNumber *obj, NSInteger index) {
         return [@(1) compare:obj];
     } options:NSBinarySearchingInsertionIndex];
 
@@ -191,7 +191,7 @@
 - (void)testBinarySearch18
 {
     NSArray<NSNumber *> *nums = @[@1];
-    NSInteger idx = [nums indexPassingTest:^NSComparisonResult(NSNumber *obj, NSInteger index) {
+    NSInteger idx = [nums sortedIndexPassingTest:^NSComparisonResult(NSNumber *obj, NSInteger index) {
         return [@(0) compare:obj];
     } options:NSBinarySearchingInsertionIndex];
 
@@ -201,7 +201,7 @@
 - (void)testBinarySearch19
 {
     NSArray<NSNumber *> *nums = @[];
-    NSInteger idx = [nums indexPassingTest:^NSComparisonResult(NSNumber *obj, NSInteger index) {
+    NSInteger idx = [nums sortedIndexPassingTest:^NSComparisonResult(NSNumber *obj, NSInteger index) {
         return [@(0) compare:obj];
     } options:NSBinarySearchingInsertionIndex];
 
@@ -211,7 +211,7 @@
 - (void)testBinarySearch20
 {
     NSArray<NSNumber *> *nums = @[];
-    NSInteger idx = [nums indexPassingTest:^NSComparisonResult(NSNumber *obj, NSInteger index) {
+    NSInteger idx = [nums sortedIndexPassingTest:^NSComparisonResult(NSNumber *obj, NSInteger index) {
         return [@(0) compare:obj];
     } options:NSBinarySearchingFirstEqual];
 
@@ -221,7 +221,7 @@
 - (void)testBinarySearch21
 {
     NSArray<NSNumber *> *nums = @[];
-    NSInteger idx = [nums indexPassingTest:^NSComparisonResult(NSNumber *obj, NSInteger index) {
+    NSInteger idx = [nums sortedIndexPassingTest:^NSComparisonResult(NSNumber *obj, NSInteger index) {
         return [@(0) compare:obj];
     } options:NSBinarySearchingLastEqual];
 
@@ -231,7 +231,7 @@
 - (void)testBinarySearch22
 {
     NSArray<NSNumber *> *nums = @[@1, @1, @1, @1, @1, @2, @2, @3, @4, @4, @4, @5, @6, @8];
-    NSInteger idx = [nums indexPassingTest:^NSComparisonResult(NSNumber *obj, NSInteger index) {
+    NSInteger idx = [nums sortedIndexPassingTest:^NSComparisonResult(NSNumber *obj, NSInteger index) {
         return [@(5.5) compare:obj];
     } options:NSBinarySearchingInsertionIndex];
 
@@ -241,7 +241,7 @@
 - (void)testBinarySearch23
 {
     NSArray<NSNumber *> *nums = @[@1, @1, @1, @1, @1, @2, @2, @3, @4, @4, @4, @5, @6, @8, @9];
-    NSInteger idx = [nums indexPassingTest:^NSComparisonResult(NSNumber *obj, NSInteger index) {
+    NSInteger idx = [nums sortedIndexPassingTest:^NSComparisonResult(NSNumber *obj, NSInteger index) {
         return [@(5.5) compare:obj];
     } options:NSBinarySearchingInsertionIndex];
 
@@ -251,7 +251,7 @@
 - (void)testBinarySearch24
 {
     NSArray<NSNumber *> *nums = @[@1, @1, @1, @1, @1, @2, @2, @3, @4, @4, @4, @5, @6, @8, @9];
-    NSInteger idx = [nums indexPassingTest:^NSComparisonResult(NSNumber *obj, NSInteger index) {
+    NSInteger idx = [nums sortedIndexPassingTest:^NSComparisonResult(NSNumber *obj, NSInteger index) {
         return [@(4) compare:obj];
     } options:NSBinarySearchingInsertionIndex];
 
@@ -261,7 +261,7 @@
 - (void)testBinarySearch25
 {
     NSArray<NSNumber *> *nums = @[@1, @1, @1, @1, @1, @2, @2, @3, @4, @4, @4, @5, @6, @8, @9];
-    NSInteger idx = [nums indexPassingTest:^NSComparisonResult(NSNumber *obj, NSInteger index) {
+    NSInteger idx = [nums sortedIndexPassingTest:^NSComparisonResult(NSNumber *obj, NSInteger index) {
         return [@(7) compare:obj];
     } options:NSBinarySearchingInsertionIndex];
 
@@ -272,7 +272,7 @@
 - (void)testBinarySearch26
 {
     NSArray<NSNumber *> *nums = @[@1, @1, @1, @1, @1, @2, @2, @3, @4, @4, @4, @5, @6, @8, @9];
-    NSInteger idx = [nums indexPassingTest:^NSComparisonResult(NSNumber *obj, NSInteger index) {
+    NSInteger idx = [nums sortedIndexPassingTest:^NSComparisonResult(NSNumber *obj, NSInteger index) {
         return [@(9) compare:obj];
     } options:NSBinarySearchingInsertionIndex];
 
@@ -282,7 +282,7 @@
 - (void)testBinarySearch27
 {
     NSArray<NSNumber *> *nums = @[@1, @1, @1, @1, @1, @2, @2, @3, @4, @4, @4, @5, @6, @8, @9];
-    NSInteger idx = [nums indexPassingTest:^NSComparisonResult(NSNumber *obj, NSInteger index) {
+    NSInteger idx = [nums sortedIndexPassingTest:^NSComparisonResult(NSNumber *obj, NSInteger index) {
         return [@(3.5) compare:obj];
     } options:NSBinarySearchingFirstEqual];
 
@@ -292,7 +292,7 @@
 - (void)testBinarySearch28
 {
     NSArray<NSNumber *> *nums = @[@1, @1, @1, @1, @1, @2, @2, @3, @4, @4, @4, @5, @6, @8, @9];
-    NSInteger idx = [nums indexPassingTest:^NSComparisonResult(NSNumber *obj, NSInteger index) {
+    NSInteger idx = [nums sortedIndexPassingTest:^NSComparisonResult(NSNumber *obj, NSInteger index) {
         return [@(0) compare:obj];
     } options:NSBinarySearchingFirstEqual];
 
@@ -302,7 +302,7 @@
 - (void)testBinarySearch29
 {
     NSArray<NSNumber *> *nums = @[@1, @1, @1, @1, @1, @2, @2, @3, @4, @4, @4, @5, @6, @8, @9];
-    NSInteger idx = [nums indexPassingTest:^NSComparisonResult(NSNumber *obj, NSInteger index) {
+    NSInteger idx = [nums sortedIndexPassingTest:^NSComparisonResult(NSNumber *obj, NSInteger index) {
         return [@(8.5) compare:obj];
     } options:NSBinarySearchingFirstEqual];
 
@@ -312,7 +312,7 @@
 - (void)testBinarySearch30
 {
     NSArray<NSNumber *> *nums = @[@1, @1, @1, @1, @1, @2, @2, @3, @4, @4, @4, @5, @6, @8, @9];
-    NSInteger idx = [nums indexPassingTest:^NSComparisonResult(NSNumber *obj, NSInteger index) {
+    NSInteger idx = [nums sortedIndexPassingTest:^NSComparisonResult(NSNumber *obj, NSInteger index) {
         return [@(1) compare:obj];
     } options:NSBinarySearchingFirstEqual];
 
@@ -322,7 +322,7 @@
 - (void)testBinarySearch31
 {
     NSArray<NSNumber *> *nums = @[@1, @1, @1, @1, @1, @2, @2, @3, @4, @4, @4, @5, @6, @8, @9];
-    NSInteger idx = [nums indexPassingTest:^NSComparisonResult(NSNumber *obj, NSInteger index) {
+    NSInteger idx = [nums sortedIndexPassingTest:^NSComparisonResult(NSNumber *obj, NSInteger index) {
         return [@(1) compare:obj];
     } options:NSBinarySearchingLastEqual];
 
@@ -332,7 +332,7 @@
 - (void)testBinarySearch32
 {
     NSArray<NSNumber *> *nums = @[@1];
-    NSInteger idx = [nums indexPassingTest:^NSComparisonResult(NSNumber *obj, NSInteger index) {
+    NSInteger idx = [nums sortedIndexPassingTest:^NSComparisonResult(NSNumber *obj, NSInteger index) {
         return [@(1) compare:obj];
     } options:NSBinarySearchingLastEqual];
 
@@ -342,7 +342,7 @@
 - (void)testBinarySearch33
 {
     NSArray<NSNumber *> *nums = @[@1, @1, @1, @1, @1, @2, @2, @3, @4, @4, @4, @4, @4, @4, @5, @6, @8];
-    NSInteger idx = [nums indexPassingTest:^NSComparisonResult(NSNumber *obj, NSInteger index) {
+    NSInteger idx = [nums sortedIndexPassingTest:^NSComparisonResult(NSNumber *obj, NSInteger index) {
         return [@(8) compare:obj];
     } options:NSBinarySearchingLastEqual];
 
@@ -352,7 +352,7 @@
 - (void)testBinarySearch34
 {
     NSArray<NSNumber *> *nums = @[@1, @1, @1, @1, @1, @2, @2, @3, @4, @4, @4, @4, @4, @4, @5, @6, @8];
-    NSInteger idx = [nums indexPassingTest:^NSComparisonResult(NSNumber *obj, NSInteger index) {
+    NSInteger idx = [nums sortedIndexPassingTest:^NSComparisonResult(NSNumber *obj, NSInteger index) {
         return [@(9) compare:obj];
     } options:NSBinarySearchingLastEqual];
 
@@ -362,7 +362,7 @@
 - (void)testBinarySearch35
 {
     NSArray<NSNumber *> *nums = @[@1, @1, @1, @1, @1, @2, @2, @3, @4, @4, @4, @4, @4, @4, @5, @6, @8];
-    NSInteger idx = [nums indexPassingTest:^NSComparisonResult(NSNumber *obj, NSInteger index) {
+    NSInteger idx = [nums sortedIndexPassingTest:^NSComparisonResult(NSNumber *obj, NSInteger index) {
         return [@(0) compare:obj];
     } options:NSBinarySearchingLastEqual];
 
@@ -372,7 +372,7 @@
 - (void)testBinarySearch36
 {
     NSArray<NSNumber *> *nums = @[@1, @1, @1, @1, @1, @2, @2, @3, @4, @4, @4, @4, @4, @4, @5, @6, @8];
-    NSInteger idx = [nums indexPassingTest:^NSComparisonResult(NSNumber *obj, NSInteger index) {
+    NSInteger idx = [nums sortedIndexPassingTest:^NSComparisonResult(NSNumber *obj, NSInteger index) {
         return [@(8) compare:obj];
     } options:NSBinarySearchingFirstEqual];
 
@@ -382,7 +382,7 @@
 - (void)testBinarySearch37
 {
     NSArray<NSNumber *> *nums = @[@1, @1, @1, @1, @1, @2, @2, @3, @4, @4, @4, @4, @4, @4, @5, @6, @8];
-    NSInteger idx = [nums indexPassingTest:^NSComparisonResult(NSNumber *obj, NSInteger index) {
+    NSInteger idx = [nums sortedIndexPassingTest:^NSComparisonResult(NSNumber *obj, NSInteger index) {
         return [@(9) compare:obj];
     } options:NSBinarySearchingFirstEqual];
 
@@ -392,7 +392,7 @@
 - (void)testBinarySearch38
 {
     NSArray<NSNumber *> *nums = @[@1, @1, @1, @1, @1, @2, @2, @3, @4, @4, @4, @4, @4, @4, @5, @6, @8];
-    NSInteger idx = [nums indexPassingTest:^NSComparisonResult(NSNumber *obj, NSInteger index) {
+    NSInteger idx = [nums sortedIndexPassingTest:^NSComparisonResult(NSNumber *obj, NSInteger index) {
         return [@(0) compare:obj];
     } options:NSBinarySearchingFirstEqual];
 

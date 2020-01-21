@@ -17,18 +17,12 @@
 
 - (id)reduce:(id (^)(T obj, NSUInteger index, id accum))reduceFunc;
 
+- (id)reduce:(id (^)(T obj, NSUInteger index, id accum))reduceFunc initially:(id)accum;
+
 - (BOOL)reduceToBOOL:(BOOL (^)(T obj, NSUInteger index, BOOL accum))reduceFunc;
 
 - (T)choose:(BOOL (^)(T obj, NSUInteger index))reducefunc;
 
 - (NSArray<T> *)filter:(BOOL (^)(T obj, NSUInteger index))filterFunc;
-
-- (BOOL)containsObjectIdenticalTo:(T)anObject;
-
-// the returned NSComparisonResult should treat the input obj as the right hand argument of compare:
-// so for an array of numbers, the enumerator could be [@targetNum compare:obj];
-- (NSInteger)indexPassingTest:(NSComparisonResult (^)(T obj, NSInteger index))enumerator;
-
-- (NSInteger)indexPassingTest:(NSComparisonResult (^)(T obj, NSInteger index))enumerator options:(NSBinarySearchingOptions)options;
 
 @end

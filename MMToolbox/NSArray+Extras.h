@@ -9,19 +9,27 @@
 #import <Foundation/Foundation.h>
 
 
-@interface NSArray (Extras)
+@interface NSArray <T> (Extras)
 
-- (NSArray *)reversedArray;
+- (NSArray<T> *)reversedArray;
 
-- (NSArray *)arrayByRemovingFirstObject;
+- (NSArray<T> *)arrayByRemovingFirstObject;
 
-- (NSArray *)arrayByRemovingObject:(id)obj;
+- (NSArray<T> *)arrayByRemovingObject:(T)obj;
 
-- (NSArray *)arrayByRemovingObjectsInArray:(NSArray *)arr;
+- (NSArray<T> *)arrayByRemovingObjectsInArray:(NSArray<T> *)arr;
 
-- (NSArray *)shuffledArray;
+- (NSArray<T> *)shuffledArray;
 
-- (NSSet *)asSet;
+- (NSSet<T> *)asSet;
+
+- (BOOL)containsObjectIdenticalTo:(T)anObject;
+
+// the returned NSComparisonResult should treat the input obj as the right hand argument of compare:
+// so for an array of numbers, the enumerator could be [@targetNum compare:obj];
+- (NSInteger)sortedIndexPassingTest:(NSComparisonResult (^)(T obj, NSInteger index))enumerator;
+
+- (NSInteger)sortedIndexPassingTest:(NSComparisonResult (^)(T obj, NSInteger index))enumerator options:(NSBinarySearchingOptions)options;
 
 @end
 
