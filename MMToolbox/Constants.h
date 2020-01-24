@@ -53,8 +53,9 @@ static inline CGRect _CGSizeAspectFillFit(CGSize sizeToScale, CGSize sizeToFill,
 #define CGSizeFit(sizeToScale, sizeToFill) _CGSizeAspectFillFit(sizeToScale, sizeToFill, NO)
 
 #define CGPointSwap(point) CGPointMake((point).y, (point).x)
-#define CGPointScale(point, scale) CGPointMake(point.x *(scale), point.y *(scale))
+#define CGPointScale(point, scale) CGPointMake((point).x *(scale), (point).y *(scale))
 #define CGPointTranslate(point, translatex, translatey) CGPointMake((point).x + (translatex), (point).y + (translatey))
+#define CGPointDiff(p1, p2) CGPointMake((p1).x - (p2).x, (p1).y - (p2).y)
 
 #define interpolate(s, e, p) (s * p + e * (1 - p))
 
