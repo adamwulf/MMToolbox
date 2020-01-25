@@ -63,17 +63,17 @@ static inline CGRect _CGSizeAspectFillFit(CGSize sizeToScale, CGSize sizeToFill,
 extern "C" {
 #endif
 
-void CGContextSaveThenRestoreForBlock(CGContextRef __nonnull context, void (^__nonnull block)(void));
+extern void CGContextSaveThenRestoreForBlock(CGContextRef __nonnull context, void (^__nonnull block)(void));
 
-CGFloat DistanceBetweenTwoPoints(CGPoint point1, CGPoint point2);
+extern CGFloat DistanceBetweenTwoPoints(CGPoint point1, CGPoint point2);
 
-CGFloat SquaredDistanceBetweenTwoPoints(CGPoint point1, CGPoint point2);
+extern CGFloat SquaredDistanceBetweenTwoPoints(CGPoint point1, CGPoint point2);
 
-CGPoint NormalizePointTo(CGPoint point1, CGSize size);
+extern CGPoint NormalizePointTo(CGPoint point1, CGSize size);
 
-CGPoint DenormalizePointTo(CGPoint point1, CGSize size);
+extern CGPoint DenormalizePointTo(CGPoint point1, CGSize size);
 
-CGPoint AveragePoints(CGPoint point1, CGPoint point2);
+extern CGPoint AveragePoints(CGPoint point1, CGPoint point2);
 
 
 typedef struct Quadrilateral {
@@ -84,11 +84,13 @@ typedef struct Quadrilateral {
 } Quadrilateral;
 
 // interpolate between min/max with 0<=t<=1
-CGFloat logTransform(CGFloat min, CGFloat max, CGFloat t);
+extern CGFloat logTransform(CGFloat min, CGFloat max, CGFloat t);
 
-CGFloat sqrtTransform(CGFloat min, CGFloat max, CGFloat t);
+extern CGFloat sqrtTransform(CGFloat min, CGFloat max, CGFloat t);
 
-CGFloat sqTransform(CGFloat min, CGFloat max, CGFloat t);
+extern CGFloat sqTransform(CGFloat min, CGFloat max, CGFloat t);
+
+extern CGFloat lineTransform(CGFloat min, CGFloat max, CGFloat t);
 
 
 #ifdef __cplusplus

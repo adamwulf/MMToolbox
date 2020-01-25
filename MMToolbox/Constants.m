@@ -65,3 +65,8 @@ CGFloat sqTransform(CGFloat min, CGFloat max, CGFloat t)
     t = powf(t, 1.5);
     return min + (max - min) * t;
 }
+
+CGFloat lineTransform(CGFloat min, CGFloat max, CGFloat t)
+{
+    return min + (max - min) * t;
+}
